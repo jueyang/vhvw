@@ -1,6 +1,6 @@
 ## A simple css using viewport sizing.
 
-Original post: http://tutorialzine.com/2015/05/simplify-your-stylesheets-with-the-magical-css-viewport-units
+[Original post](http://tutorialzine.com/2015/05/simplify-your-stylesheets-with-the-magical-css-viewport-units) by Danny Markov
 
 ![](http://i.imgur.com/ZUQykw5.gif)
 
