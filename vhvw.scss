@@ -1,0 +1,74 @@
+$full-vw-width: 100vw;
+$full-vw-height: 100vh;
+$full-parent-width: 100%;
+$full-parent-height: 100%;
+$font-default: 2vw;
+$font-family: sans-serif;
+
+@mixin sizing($ratio){
+	font-size:$font-default * $ratio;
+}
+
+@mixin columning($total, $num){
+	width:$full-vw-width/$total * $num;
+}
+
+@mixin centering($elWidth, $elHeight, $margin){
+	width:$elWidth;
+	width:$elHeight;
+	margin:$margin auto;
+}
+
+/* text */
+
+body {
+	margin:0;
+	padding:0;
+	font: $font-default $font-family;
+
+	* {margin:0; padding:0;} /* no default margin/padding for any elements*/
+}
+
+h1 {@include sizing(8);}
+h2 {@include sizing(6);}
+h3 {@include sizing(5);}
+h4 {@include sizing(4);}
+h5 {@include sizing(3);}
+h6 {@include sizing(2);}
+
+/* full screen */
+
+.full-width {width:$full-vw-width;}
+.full-height {height:$full-vw-height;}
+
+/* 12 columns */
+
+.column {float:left;}
+.column1  {@include columning(12,1) ; @extend .column;}
+.column2  {@include columning(12,2) ; @extend .column;}
+.column3  {@include columning(12,3) ; @extend .column;}
+.column4  {@include columning(12,4) ; @extend .column;}
+.column5  {@include columning(12,5) ; @extend .column;}
+.column6  {@include columning(12,6) ; @extend .column;}
+.column7  {@include columning(12,7) ; @extend .column;}
+.column8  {@include columning(12,8) ; @extend .column;}
+.column9  {@include columning(12,9) ; @extend .column;}
+.column10 {@include columning(12,10); @extend .column;}
+.column11 {@include columning(12,11); @extend .column;}
+.column12 {@include columning(12,12); @extend .column;}
+
+/* inheritance */
+
+.size-to-parent {
+	width:$full-parent-width;
+	height:$full-parent-height;
+}
+.size-to-viewport {
+	width:$full-vw-width;
+	height:$full-vw-height;
+}
+
+/* responsive vertical centering */
+.center60 {
+	@include centering(60,60,20);
+}
